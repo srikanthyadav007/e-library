@@ -1,0 +1,35 @@
+
+.content {
+  padding: 20px;
+}
+
+.header {
+  padding: 10px;
+  background: #edf2f4;
+  border-bottom: 1px solid #999;
+}
+.header a {
+  color: #0072ff;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.header a:hover {
+  color: #8a0f53;
+}
+.header small {
+  color: #666;
+}
+.header .active {
+  color: #2c7613;
+}
+
+
+.bg {
+        
+        background-image: url("https://i.ibb.co/myFZHMP/janko-ferlic-sf-L-QOnmy00-unsplash.jpg");
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
