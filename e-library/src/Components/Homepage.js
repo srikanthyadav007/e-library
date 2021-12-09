@@ -1,5 +1,6 @@
 import React from 'react'
-import HomepageStyles from './Homepage.module.css' 
+import HomepageStyles from './Homepage.module.css'
+import SearchStyles from './Search.module.css' 
 
 
 function Homepage() {
@@ -13,13 +14,14 @@ function Homepage() {
               <li><a href="#" className={HomepageStyles.menu_item}>ABOUT</a></li>
               <li><a href="#" className={HomepageStyles.menu_item}>TOPIC</a></li>
               <li><a href="#" className={HomepageStyles.menu_item}>CONTACT</a></li>
-              <li><a href="/dashboard" className={HomepageStyles.menu_item}>PROFILE</a></li>
+              <li><a href="/profile" className={HomepageStyles.menu_item}>PROFILE</a></li>
               <li><a href="/login" className={HomepageStyles.menu_item}>LOGIN</a></li>
               
+              
           </ul>
-          
-         
+        
       </div>
+
   </nav>
   <main>
     
@@ -29,6 +31,12 @@ function Homepage() {
       </div>
       <div className={HomepageStyles.heading}>
         <p className={HomepageStyles.heading_title}>ONlib</p>
+        <div>
+        <form action="/" className={`${SearchStyles.search_wrapper} ${SearchStyles.cf}`}>
+        <input type="text" placeholder="Search here..." required="" /> 
+        <button type="submit">Search</button>
+        </form>
+        </div>
     
         <div className={HomepageStyles.heading_text}>
          THIS IS GOING TO A BE A COLLEGE ONLINE LIBRARY

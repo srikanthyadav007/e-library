@@ -23,7 +23,7 @@ const Login = () => {
     }).then(response => {
       setLoading(false);
       setUserSession(response.data.token, response.data.user);
-      navigate('/dashboard');
+      navigate('/profile');
 
     }).catch(error => {
       setLoading(false);

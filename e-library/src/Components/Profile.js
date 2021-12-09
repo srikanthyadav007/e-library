@@ -1,10 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { removeUserSession, getUser } from '../Utils/Common'
-import ProfileStyles from './Dashboard.module.css' 
+import ProfileStyles from './Profile.module.css' 
 
 
-function Dashboard() {
+function Profile() {
 
   const navigate = useNavigate();
   const user = getUser();
@@ -50,6 +50,6 @@ function Dashboard() {
      )
 }
 
-export default Dashboard ;
+export default Profile ;
 
 
