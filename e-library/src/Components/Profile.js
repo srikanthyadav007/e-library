@@ -15,34 +15,35 @@ function Profile() {
   }
 
   return (
-    <div className={ProfileStyles.fullcover}>
-    <h1 className={ProfileStyles.title_pen}> User Profile </h1>
+    
+    <div className={`${ProfileStyles.bg} ${ProfileStyles.fullcover}`}>
+    <h1 className={ProfileStyles.title_pen}>Hello! {user.username} </h1>
       <div className={ProfileStyles.user_profile}>
-	<img className={ProfileStyles.avatar} src="https://i.ibb.co/51TqWNd/Whats-App-Image-2021-12-07-at-7-01-04-PM.jpg" alt="Ash" />
-    <div className={ProfileStyles.username}>ROHITH HARIDASUAL</div>
+	<img className={ProfileStyles.avatar} src="https://i.ibb.co/51TqWNd/Whats-App-Image-2021-12-07-at-7-01-04-PM.jpg" alt="User Profile pic" />
+    <div className={ProfileStyles.username}>{user.name}</div>
   <div className={ProfileStyles.bio}>
-  	Senior UI Designer
+  	Bio
   </div>
     <div className={ProfileStyles.description}>
-      I use to design websites and applications
-      for the web.
+    Profession
   </div>
   <ul className={ProfileStyles.data}>
     <li>
-      <span className={ProfileStyles.entypo_heart}> FAVOURITES</span>
+      <span > FAVOURITES</span>
     </li>
     <li>
-      <span className={ProfileStyles.entypo_eye}> WISHLIST</span>
+      <span > WISHLIST</span>
     </li>
     <li>
-      <span className={ProfileStyles.entypo_user}> HISTORY</span>
+      <span > HISTORY</span>
     </li>
- </ul>
- <input
-        type="button"
-        value="Logout"
-        onClick={handleLogout}
-      />
+  </ul>
+       
+  <input
+     type="button"
+     value="Logout"
+     onClick={handleLogout} />
+
 </div>
 
 

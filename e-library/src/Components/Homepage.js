@@ -1,9 +1,15 @@
 import React from 'react'
 import HomepageStyles from './Homepage.module.css'
 import SearchStyles from './Search.module.css' 
+import { removeUserSession, getUser } from '../Utils/Common'
 
 
 function Homepage() {
+    let user = getUser();
+    if (!user)
+    {
+      user={'name':""}
+    }
     return (
         <div>
               <nav>
@@ -41,8 +47,11 @@ function Homepage() {
         <div className={HomepageStyles.heading_text}>
          THIS IS GOING TO A BE A COLLEGE ONLINE LIBRARY
         </div>
-       
-      </div>
+       </div>
+
+      <h1>New Arrivals</h1>
+
+
       <div className={HomepageStyles.cards}>
           <div className={HomepageStyles.card}>
             <div className={HomepageStyles.thumbnail}>
@@ -139,6 +148,76 @@ function Homepage() {
               </p>
             </div>
           </div>
+          
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/JpKtv62/CC3.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Kai Hwang
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+
+
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/gwJ46V6/ML.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Samuel Hack
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/k6zRYXQ/Deep-learning.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : John Kelleher
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+
+
+          </div>
+          
+          <hr />
+          
+          <h1>Popular Readings :</h1>
+
+          <div className={HomepageStyles.cards}>
           <div className={HomepageStyles.card}>
             <div className={HomepageStyles.thumbnail}>
             <img src="https://i.ibb.co/vLrMDyh/CN.png" height="225px" width="205" />
@@ -202,6 +281,128 @@ function Homepage() {
             </div>
             <div className={HomepageStyles.card_text}>
               By : Dennis M.Ritchie
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/Yd67jMR/OS-2.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Andrew Stuart
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                100 PAGES
+              </p>
+            </div>
+          </div>
+          
+      </div>
+<hr />
+<br />
+     <h1>Recommandations for {user.username} : </h1>
+
+      <div className={HomepageStyles.cards}>
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/LCshFCr/Ai.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Peter Norvig
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/X57PqrJ/DBMS.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : B. Navathe
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/mNGK790/DM.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Pang-Ning Tan
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/CWd8Hz9/NLP.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Anuj Gupta
+            </div>
+            <div className={HomepageStyles.card_buttons}>
+              <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                View
+              </div>
+              <div className={`${HomepageStyles.card_button_2} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
+                FEEDBACK
+              </div>
+              <p className={HomepageStyles.card_bottom_text}>
+                90 PAGES
+              </p>
+            </div>
+          </div>
+
+          <div className={HomepageStyles.card}>
+            <div className={HomepageStyles.thumbnail}>
+            <img src="https://i.ibb.co/prbpZ4N/Data-Anlaytics.jpg" height="225px" width="205" />
+            </div>
+            <div className={HomepageStyles.card_text}>
+              By : Robert Keane
             </div>
             <div className={HomepageStyles.card_buttons}>
               <div className={`${HomepageStyles.card_button_1} ${HomepageStyles.hover_effect} ${HomepageStyles.add_cursor}`}>
