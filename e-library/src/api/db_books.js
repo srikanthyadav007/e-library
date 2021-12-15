@@ -5,7 +5,7 @@ let books = [
         authors: ["Peter B.Galvin",],
         img:"/pdf-cover-images/0_OS.jpg",
         file:"/pdf-files/0_OS.pdf",
-        reads: 100
+        reads: 10
 
     },
     {
@@ -19,7 +19,7 @@ let books = [
     {
         id: 2,
         title: "Compilers, Principles, Tools and Techniques",
-        authors: ["Aho", "Sethi", "Ullman"],
+        authors: ["Jeffrey Ullman", "Sethi", "Aho"],
         img:"/pdf-cover-images/2_CD.jpg",
         file:"/pdf-files/2_CD.pdf",
         reads: 2
@@ -59,7 +59,7 @@ let books = [
     {
         id: 7,
         title: "Introduction to ALGORITHMS",
-        authors: ["Corem", "Leiserson", "Rivest", "Stein"],
+        authors: ["Thomas Cormen", "Leiserson", "Rivest", "Stein"],
         img:"/pdf-cover-images/7_Algo.jpg",
         file:"/pdf-files/7_Algo.pdf",
         reads: 80
@@ -70,31 +70,39 @@ let books = [
         authors: ["Henry F. Korth"],
         img:"/pdf-cover-images/8_DBMS.jpg",
         file:"/pdf-files/8_DBMS.pdf",
-        reads: 60
+        reads: 45
     },
     {
         id: 9,
         title: "Computer Programming Language",
-        authors: ["Brian W. Kernighan", "Dennis M. Ritchie"],
+        authors: ["Dennis M.Ritchie","Brian W. Kernighan"],
         img:"/pdf-cover-images/9_CP.jpg",
         file:"/pdf-files/9_CP.pdf",
         reads: 50
     },
     {
         id: 10,
-        title: "Database System Concepts",
-        authors: ["Henry F. Korth"],
-        img:"/pdf-cover-images/10_DBMS.jpg",
-        file:"/pdf-files/10_DBMS.pdf",
-        reads: 65
+        title: "Distributed and Cloud Computing",
+        authors: ["Kai Hwang","Geoffrey C.Fox"],
+        img:"/pdf-cover-images/10_CC.jpg",
+        file:"/pdf-files/10_CC.pdf",
+        reads: 45
     },
     {
         id: 11,
-        title: "Practical Natural Language Processing",
-        authors: ["Henry F. Korth"],
-        img:"/pdf-cover-images/11_NLP.jpg",
-        file:"/pdf-files/11_NLP.pdf",
+        title: "Digital Logic and Computer Design",
+        authors: ["M.Morris Mano"],
+        img:"/pdf-cover-images/11_DLD.jpeg",
+        file:"/pdf-files/11_DLD.pdf",
         reads: 42
+    },
+    {
+        id: 12,
+        title: "Modern Operating Systems",
+        authors: ["Andrew S","Herbert Bos"],
+        img:"/pdf-cover-images/12_OS2.jpg",
+        file:"/pdf-files/12_OS2.pdf",
+        reads: 60
     },
 ]
 

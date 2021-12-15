@@ -61,7 +61,7 @@ function Homepage() {
       {/* last x from database, as new arrivals get appended in json db */}
       <h1>New Arrivals</h1>
       <div className={HomepageStyles.cards}>
-      {db_books.slice(-5).map((b)=>          
+      {db_books.reverse().slice(-8).reverse().map((b)=>          
         <div className={HomepageStyles.card}>
             <div className={HomepageStyles.thumbnail}>
             <img src={b["img"]} height="225px" width="205" />

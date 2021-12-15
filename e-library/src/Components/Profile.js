@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { removeUserSession, getUser } from '../Utils/Common'
 import ProfileStyles from './Profile.module.css' 
 
+import UserInfoUIComponent from './UserInfoUIComponent'
 
 function Profile() {
 
@@ -13,6 +14,9 @@ function Profile() {
     removeUserSession();
     navigate('/login');
   }
+
+  // Declare new state variable, for displaying history/fav/wishlist
+  const [display, setDisplay] = useState("history");
 
   return (
     
@@ -29,13 +33,13 @@ function Profile() {
   </div>
   <ul className={ProfileStyles.data}>
     <li>
-      <span > FAVOURITES</span>
+      <span onClick={()=>setDisplay("fav")} > FAVOURITES</span>
     </li>
     <li>
-      <span > WISHLIST</span>
+      <span onClick={()=>setDisplay("wishlist")}> WISHLIST</span>
     </li>
     <li>
-      <span > HISTORY</span>
+      <span onClick={()=>setDisplay("history")}> HISTORY</span>
     </li>
   </ul>
        
@@ -46,6 +50,8 @@ function Profile() {
 
 </div>
 
+{/* TODO: paginate this list component */}
+<UserInfoUIComponent display={display}/> 
 
 </div>
      )
