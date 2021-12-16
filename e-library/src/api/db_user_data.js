@@ -28,12 +28,13 @@ let userData = [
         username: "sreekanth",
         isAdmin: true,
 
-        fav: [1, 2],
+        fav: [1, 2, 10],
         history: [
             {id:1, date:"10:42 5-Dec-2021"},
             {id:2, date:"11:42 6-Dec-2021"},
+            {id:5, date:"13:55 10-Dec-2021"},
         ],
-        wishlist: [1, 2],
+        wishlist: [1, 2, 6, 11],
 
     },
 

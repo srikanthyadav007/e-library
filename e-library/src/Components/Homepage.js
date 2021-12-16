@@ -20,13 +20,13 @@ function Homepage() {
     return (
         <div>
               <nav>
-      <div className={HomepageStyles.menu}>
+                <div className={HomepageStyles.menu}>
           <ul>
               
-              <li><a href="#" className={HomepageStyles.menu_item}>HOME</a></li>
+              <li><a href="/" className={HomepageStyles.menu_item}>HOME</a></li>
               <li><a href="#" className={HomepageStyles.menu_item}>ABOUT</a></li>
               <li><a href="#" className={HomepageStyles.menu_item}>TOPIC</a></li>
-              <li><a href="#" className={HomepageStyles.menu_item}>CONTACT</a></li>
+              <li><a href="/booksform" className={HomepageStyles.menu_item}>ADD BOOKS</a></li>
               <li><a href="/profile" className={HomepageStyles.menu_item}>PROFILE</a></li>
               <li><a href="/login" className={HomepageStyles.menu_item}>LOGIN</a></li>
               
@@ -36,6 +36,7 @@ function Homepage() {
       </div>
 
   </nav>
+
   <main>
     
     <article>
@@ -230,7 +231,7 @@ function Homepage() {
     </section>
     <section>
     <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_phone}`}></i></span>
-    <span>6301595977</span>
+    <span>9876543210</span>
     </section>
     <section>
     <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_envelope}`}></i></span>
@@ -258,6 +259,7 @@ function Homepage() {
     Copyright © 2021 ONlib - All rights reserved 
     </div>
     </footer>
+
         </div>
     )
 }

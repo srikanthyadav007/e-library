@@ -23,13 +23,13 @@ function Profile() {
     <div className={`${ProfileStyles.bg} ${ProfileStyles.fullcover}`}>
     <h1 className={ProfileStyles.title_pen}>Hello! {user.username} </h1>
       <div className={ProfileStyles.user_profile}>
-	<img className={ProfileStyles.avatar} src="https://i.ibb.co/51TqWNd/Whats-App-Image-2021-12-07-at-7-01-04-PM.jpg" alt="User Profile pic" />
+	<img className={ProfileStyles.avatar} src="https://i.ibb.co/YWzQZVd/profile-pic-logo.jpg" alt="User Profile pic" />
     <div className={ProfileStyles.username}>{user.name}</div>
   <div className={ProfileStyles.bio}>
-  	Bio
+  <input type="text" id="bio" name="bio" placeholder="Bio" />
   </div>
     <div className={ProfileStyles.description}>
-    Profession
+    <input type="text" id="profession" name="profession" placeholder="Profession" />
   </div>
   <ul className={ProfileStyles.data}>
     <li>
