@@ -1,29 +1,11 @@
-import React, { StrictMode } from 'react'
-import {connect} from "react-redux";
-import store from './../store'
-//import actions
-import {addToFav, delFromFav, addToHistory, delFromHistory} from './../Components/userInfo/userInfoAction'
-
-//api calls to mockdatabse
-import db_books from './../api/db_books'
-function getTitleFromBookId(id){
-    console.log('book id: ', id)
-    return db_books.find((b)=>b.id==id)
-}
-
-
+import History from './History';
+import Favourites from './Favourites';
+import WishList from './WishList';
+import React from 'react';
+import HomepageStyles from './Homepage.module.css'
 
 function UserInfoUIComponent(props) {
-    //dispatcher for handling click on 'remove favoruite' button
-    function remFav(book_id){
-        console.log(`Remove ${book_id} form fav`)
-        store.dispatch(delFromFav(book_id));
-    }
-    //dispatcher for handling clicking on 'delete' from history
-    function handleDel(book_id, time){
-        console.log(`Remove ${book_id} from user history`)
-        store.dispatch(delFromHistory(book_id, time))
-    }
+    
 
 
     console.log('props:',props)
@@ -32,88 +14,80 @@ function UserInfoUIComponent(props) {
     const W = (props.display==="wishlist")
     console.assert(H+F+W<=1 && "Either History/fav/wishlist on screen")
 
-    console.log("Fav: ",F,props.info.fav)
+    
     return (
         <div>
 
-            {/* History Table*/}
+        {/* History Table*/}
 
-            {H && <table>
-                <thead>
-                    <tr>
-                        <th>Book Name</th>
-                        <th>Last Accessed</th>
-                        <th>{props.display}</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {/* history */}
-                    {props.info.history.map((b)=>(
-                        <tr>
-                            <td>{getTitleFromBookId(b.id).title}</td>
-                            <td>{b.date}</td>
-                            <td><button onClick={()=>handleDel(b.id, b.date)}>Delete</button></td>
-                        </tr>
-                    ))}
-
-                </tbody>
-
-            </table>}
+        {H && <div id={`${HomepageStyles.pagecontainer}`}>
+        
+        <ul>
+        <li style={{color:'white',padding:'10px',backgroundColor:'black'}} className={HomepageStyles.menu_item}>HISTORY</li>
+        </ul>
+        
+        <History > </History> </div>}
             
         {/* Fav Table */}
-        {F && <table>
-                <thead>
-                    <tr>
-                        <th>Book Name</th>
-                        <th>Favourite</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    {/* fav */}
-                    {props.info.fav.map((b)=>(
-                        <tr>
-                            <td>{getTitleFromBookId(b).title}</td>
-                            <td><button onClick={()=>remFav(b)}>Unmark fav</button></td>
-                        </tr>
-                    ))}
-                </tbody>
+        {F && <div id={`${HomepageStyles.pagecontainer}`}>
 
-            </table>
-            }
+        <ul>
+        <li style={{color:'white',padding:'10px',backgroundColor:'black'}} className={HomepageStyles.menu_item}>MY FAVOURITES</li>
+        </ul>  
+         <Favourites > </Favourites> 
+         </div> }
         {/* Wishlist Table */}
-        {W && <table>
-                <thead>
-                    <tr>
-                        <th>Book Name</th>
-                        <th>Wishlist</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    {/* Wishlist */}
-                    {props.info.wishlist.map((b)=>(
-                        <tr>
-                            <td>{getTitleFromBookId(b).title}</td>
-                            <td><button onClick={()=>remFav(b)}>Unmark Wishist</button></td>
-                        </tr>
-                    ))}
-                </tbody>
+        {W && <div id={`${HomepageStyles.pagecontainer}`}>
+        
+        <ul>
+        <li style={{color:'white',padding:'10px',backgroundColor:'black'}} className={HomepageStyles.menu_item}>MY WISH LIST</li>
+        </ul>
+            <WishList> </WishList>
+            </div>
+         }
 
-            </table>
-            }
+        <footer id={`${HomepageStyles.footer}`}>
+    <div className={HomepageStyles.top_header}>
+    <section>
+    <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_map_marker}`}></i></span>
+    <span> Indian Institute of information Technology,Sricity,Chittoor,Andhra Pradesh</span>
+    </section>
+    <section>
+    <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_phone}`}></i></span>
+    <span>📞 Mobile Number</span>
+    </section>
+    <section>
+    <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_envelope}`}></i></span>
+    <span>onlinelibrary@gmail.com</span>
+    </section>
+    </div>
+    <span className={HomepageStyles.border_shape}></span>
+    <div className={HomepageStyles.bottom_content}>
+    <section>
+    <a href="#"><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_facebook}`}></i></a>
+    <a href="#"><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_instagram}`}></i></a>
+    <a href="#"><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_twitter}`}></i></a>
+    <a href="#"><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_telegram}`}></i></a>
+    </section>
+    <section>
+    <a href="#">Home</a>
+    <a href="#">About us</a>
+    <a href="#">Feedback</a>
+    <a href="#">Support</a>
+    <a href="#">Help</a>
+    <a href="#">Contact Us</a>
+    </section>
+    </div>
+    <div className={HomepageStyles.copyright}>
+    Copyright © 2022 ONlib - All rights reserved 
+    </div>
+    </footer>
 
 
         </div>
     )
 }
 
-const mapStateToProps = (state)=>{
-    console.log('state:',state)
-    return {
-        info: state.userInfo
-    }
-}
-
-export default connect(mapStateToProps)(UserInfoUIComponent)
+export default UserInfoUIComponent;

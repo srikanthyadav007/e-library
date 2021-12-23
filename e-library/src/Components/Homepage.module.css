@@ -525,4 +525,16 @@ code {
         transform: translate3d(-1692px, 0, 0);
       }
     }
+ #pagecontainer {
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    
+    #footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+                  
+    }
   

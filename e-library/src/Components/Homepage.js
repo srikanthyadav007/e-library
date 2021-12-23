@@ -231,7 +231,7 @@ function Homepage() {
     </section>
     <section>
     <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_phone}`}></i></span>
-    <span>9876543210</span>
+    <span> 📞 Mobile Number</span>
     </section>
     <section>
     <span><i className={`${HomepageStyles.fa} ${HomepageStyles.fa_envelope}`}></i></span>
